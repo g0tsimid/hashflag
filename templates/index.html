@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Hash#Flag - Email alerts for keywords and hashtags!</title>
+	<link rel="stylesheet" type="text/css" href="../tweet_alert/static/css/default.css" />
+</head>
+<body>
+	<div id="header">
+		<div id="header-container">
+			<div id="login-options">
+				<ul>
+					<li class="logged-out"><a href="#">Sign in</a></li>
+					<li class="logged-out"><a href="#">Register</a></li>
+					<li class="logged-in"><a href="#">Sign out</a></li>
+					<li class="logged-in"><a href="#">Settings</a></li>
+				</ul>
+			</div>
+			<div id="logo">
+				<h1>hash<span class="white-flag">#</span>flag</h1>
+			</div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="trending-sidebar">
+			<h2>Trending</h2>
+			<ul id="trends">
+				<li>#E3 +</li>
+				<li>World Cup +</li>
+				<li>London 2012 +</li>
+				<li>#Olympics +</li>
+				<li>Lakers +</li>
+				<li>Where's Zelda +</li>
+			</ul>
+			<a class="more-link" href="#">more...</a>
+		</div>
+		<form action="//create-alert" id="create-alert">
+			<h2>Create a new alert</h2>
+			<p class="h2-description">Have tweets matching a keyword sent to your inbox. Enter your email address and the keywords you would like to track below.</p>
+			<p class="h2-description">By default, tweets are delivered one at a time to your inbox. You can instead opt to have tweets sent to you by digest on a periodic basis.</p>
+			<h3>Email Address:</h3>
+			<input type="text" name="email" class="text-input" />
+			<div class="email-checkbox">
+				<input type="checkbox" name="register-member"><label for="register-member">Become a member after submitting.</label>
+			</div>
+			<h3>Keywords:</h3>
+			<div class="alert-keyword-section">
+				<a href="#" class="alert-add-keyword">+</a>
+				<input type="text" name="keyword" class="text-input" />
+				<div class="alert-keywords">
+					<ul class="alert-keyword-list">
+						<li>nintendo <a href="#" class="alert-remove-keyword">&times;</a></li>
+						<li>twitter <a href="#" class="alert-remove-keyword">&times;</a></li>
+						<li>sony <a href="#" class="alert-remove-keyword">&times;</a></li>
+						<li>digg <a href="#" class="alert-remove-keyword">&times;</a></li>
+						<li>microsoft <a href="#" class="alert-remove-keyword">&times;</a></li>
+						<li>facebook <a href="#" class="alert-remove-keyword">&times;</a></li>
+					</ul>
+				</div>
+			</div>
+			<h3>Message settings:</h3>
+			<input type="radio" value="instant" name="is-instance" /><label for="is-instant">Send tweets automatically</label>
+			<br />
+			<input type="radio" value="digest" checked="checked" name="is-instance" /><label for="is-instant">Send me a digest</label>
+			<div class="alert-frequency-settings">
+				<h4>Frequency</h4>
+				<div class="alert-frequency">
+					<input type="radio" value="hourly" checked="checked" name="frequency" /><label for="frequency">Hourly</label>
+					<input type="radio" value="daily" name="frequency" /><label for="frequency">Daily</label>
+				</div>
+				<h4>Digest Size</h4>
+				<div class="alert-digest-size">
+					<input type="radio" value="all" checked="checked" name="digest-size" /><label for="digest-size">All tweets for the hour/day</label>
+					<br />
+					<input type="radio" value="last-x" name="digest-size" />
+					<label for="digest-size">Send only the last <input type="text" class="digest-size-input" name="size-input" /> tweets for the hour/day</label>
+				</div>
+			</div>
+			<input class="submit-button" type="submit" value="Create Alert" />
+		</form>
+		<div id="footer">
+			&copy;2012 Stephen Tsimidis
+		</div>
+	</div>
+</body>
+</html>

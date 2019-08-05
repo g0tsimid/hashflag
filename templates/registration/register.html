@@ -1,0 +1,52 @@
+{% extends "base-home.html" %}
+
+{% block extra_js %} {% endblock %}
+
+{% block page_content %}
+    <div id="sidebar">
+       <h2>Why register?</h2>
+       <p class="h2-description">
+           Registration allows you to keep track of all alerts you make on HashFlag. You can delete and modify specific alerts, as well as view past email digests that were sent to you.
+       </p>
+        <p class="h2-description">
+            Also, if you have previously opted to spam-protect your email address, you must register in order to unblock your email and start receiving alerts.
+        </p>
+    </div>
+    <div id="main-body">
+        <form action="/register/" id="registration-form" method="post">
+            {% csrf_token %}
+            <h2>{% block register-header %}Register{% endblock %}</h2>
+            {% block register_help_text %}
+                <p class="h2-description">Sign in to view your alerts, make changes, and browse past digests that were sent to your email.</p>
+            {% endblock %}
+            {% block reg_email_input %}
+                <h3>Email Address:</h3>
+                <p class="h2-description">
+                    {{ form.email.errors }}
+                </p>
+                {{ form.email }}
+            {% endblock %}
+            {% block reg_password %}
+                <h3>Password:</h3>
+                <p class="h2-description">Your passwords should be at least six characters long and containing at least one alpha and one numeric character.</p>
+                <p class="h2-description">
+                    {% if password_errors %}
+                    <ul class="errorlist">
+                        {% for error in password_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endif %}
+                    </ul>
+                </p>
+                <input type="password" name="password" id="user-password" class="text-input" />
+                <h3>Confirm Password:</h3>
+                <input type="password" name="password-confirm" id="user-password-confirm" class="text-input" />
+                <div class="email-checkbox">
+                    <input type="checkbox" name="remember-me" id="registration-login-remember" /><label for="registration-login-remember">Keep me logged into this account.</label>
+                </div>
+            {% endblock %}
+
+            <input type="submit" value="Sign In" />
+        </form>
+    </div>
+{% endblock %}

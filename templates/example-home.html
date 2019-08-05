@@ -1,0 +1,24 @@
+{% extends "base-home.html" %}
+
+{% block login_options %}
+    <li class="logged-out"><a href="#">Sign in</a></li>
+    <li class="logged-out"><a href="#">Register</a></li>
+    <li class="logged-in"><a href="#">Sign out</a></li>
+    <li class="logged-in"><a href="#">Settings</a></li>
+{% endblock %}
+{% block trends %}
+    <li>#E3 +</li>
+    <li>World Cup +</li>
+    <li>London 2012 +</li>
+    <li>#Olympics +</li>
+    <li>Lakers +</li>
+    <li>Where's Zelda +</li>
+{% endblock %}
+{% block keyword_input %}
+    <li><a href="#" class="alert-remove-keyword">&times;</a>nintendo</li>
+    <li><a href="#" class="alert-remove-keyword">&times;</a>twitter</li>
+    <li><a href="#" class="alert-remove-keyword">&times;</a>sony</li>
+    <li><a href="#" class="alert-remove-keyword">&times;</a>digg</li>
+    <li><a href="#" class="alert-remove-keyword">&times;</a>microsoft</li>
+    <li><a href="#" class="alert-remove-keyword">&times;</a>facebook</li>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <div id="trending-sidebar">
+        <h2>Trending</h2>
+        <ul id="trends">
+            {% block trends %}
+                {% for trend in trends %}
+                    <li>{{ trend.keyword }}</li>
+                {% endfor %}
+            {% endblock %}
+        </ul>
+        <a class="more-link" href="#">more...</a>
+    </div>
+    <div id="main-body">
+        {% block form_message %} {% endblock %}
+        <form action="/create/" id="create-alert" method="post">
+            {% csrf_token %}
+            <h2>{% block alert_create_header %}Create a new alert{% endblock %}</h2>
+            {% block alert_help_text %}
+                <p class="h2-description">Have tweets matching a keyword sent to your inbox. Enter your email address and the keywords you would like to track below.</p>
+                <p class="h2-description">By default, tweets are delivered one at a time to your inbox. You can instead opt to have tweets sent to you by digest on a periodic basis.</p>
+            {% endblock %}
+            {% block email_input %}
+                {% if user.is_authenticated %}
+                    <input type="hidden" name="email" id="id_email" value="{{ user.email }}" class="text-input" />
+                {% else %}
+                    <h3>Email Address:</h3>
+                    <p class="h2-description">
+                        {{ form.email.errors }}
+                    </p>
+                    {{ form.email }}
+                    <div class="email-checkbox">
+                        <input type="checkbox" id="new-alert-register" name="register-member" /> <label for="new-alert-register">Register with hashflag to manage multiple alerts and view your digest history!</label>
+                    </div>
+                {% endif %}
+            {% endblock %}
+
+            <h3>Keywords:</h3>
+            {% if keyword_errors %}
+            <ul class="errorlist">
+                <li>{{ keyword_errors }}</li>
+            </ul>
+            {% endif %}
+            <div class="alert-keyword-section">
+                <a href="#" class="alert-add-keyword">+</a>
+                <input type="text" name="keyword" id="new-alert-keyword" class="text-input" />
+                <div class="alert-keywords">
+                    <ul class="alert-keyword-list">
+                        {% block keyword_input %} {% endblock %}
+                    </ul>
+                </div>
+            </div>
+
+            {% block message_settings_input %}
+                <h3>Message settings:</h3>
+                <input type="radio" value="instant" disabled="disabled" name="message-setting" id="instant-message" /><label for="instant-message">Send tweets automatically</label>
+                <br />
+                <input type="radio" value="digest" checked="checked" id="digest-message" name="message-setting" /><label for="digest-message">Send me a digest</label>
+                <div class="alert-frequency-settings">
+                    <h4>Frequency</h4>
+                    <div class="alert-frequency">
+                        <input type="radio" value="hourly" checked="checked" id="hourly-frequency" name="frequency" /><label for="hourly-frequency">Hourly</label>
+                        <input type="radio" value="daily" id="daily-frequency" name="frequency" /><label for="daily-frequency">Daily</label>
+                    </div>
+                    <h4>Digest Size</h4>
+                    <div class="alert-digest-size">
+                        <input type="radio" value="all" checked="checked" id="digest-all" name="digest-size" /><label for="digest-all">All tweets for the hour/day</label>
+                        <br />
+                        <input type="radio" value="last-x" id="digest-last-x" name="digest-size" />
+                        <label for="digest-last-x">Send only the last</label>
+                        <input type="text" id="size-input" class="digest-size-input" name="size-input" />
+                        <label for="digest-last-x">tweets for the hour/day</label>
+                    </div>
+                </div>
+            {% endblock %}
+            {% block captcha %}
+                <h3>Spam protection</h3>
+                <span class="validation_error">{{ captcha_response }}</span>
+                <script type="text/javascript"
+                        src="http://api.recaptcha.net/challenge?k=6Ld9ktISAAAAAFTd8NWo4KKBb-nKEGQHhYyweKxu">
+                </script>
+
+                <noscript>
+                    <iframe src="http://api.recaptcha.net/noscript?k=6Ld9ktISAAAAAFTd8NWo4KKBb-nKEGQHhYyweKxu"
+                            height="300" width="500" frameborder="0"></iframe><br>
+                    <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                    </textarea>
+                    <input type="hidden" name="recaptcha_response_field"
+                           value="manual_challenge">
+                </noscript>
+            {% endblock %}
+            <input type="hidden" id="track-keywords" name="track" />
+            <input type="submit" value="Create Alert" />
+        </form>
+    </div>
+{% endblock %}

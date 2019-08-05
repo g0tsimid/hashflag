@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>{% block page_title %}Hash#Flag - Email alerts for keywords and hashtags!{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/default.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}javascript/alert-functions.js" type="text/javascript"></script>
+    {% block extra_js %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(".alert-add-keyword").click(addKeyword);
+            $("#new-alert-email").keydown(function(evt) {
+                if (evt.which == 13) {
+                    evt.preventDefault();
+                }
+            });
+            $("#new-alert-keyword").keydown(function(evt) {
+                if (evt.which == 13) { // Handle the enter key
+                    evt.preventDefault();
+                    addKeyword();
+                }
+            });
+            $("input[type='submit']").click(function (evt) {
+                evt.preventDefault();
+                submit();
+            })
+            //$("#instant-message").change(enableFrequencySettings());
+            //$("#digest-message").change(disableFrequencySettings());
+        });
+    </script>
+    {% endblock %}
+</head>
+<body>
+	<div id="header">
+		<div id="header-container">
+			<div id="login-options">
+				<ul>
+                    {% block login_options %}
+                        {% if user.is_authenticated %}
+                            <span class="menu-text">Logged in as {{ user.username }}</span>
+                            <li class="logged-in"><a href="#">Settings</a></li>
+                            <li class="logged-in"><a href="/logout/">Sign Out</a></li>
+                        {% else %}
+                            <li class="logged-out"><a href="/login/">Sign in</a></li>
+                            <li class="logged-out"><a href="/register/">Register</a></li>
+                        {% endif %}
+                    {% endblock %}
+				</ul>
+			</div>
+			<div id="logo">
+				<h1><a href="/">hash<span class="white-flag">#</span>flag</a></h1>
+			</div>
+		</div>
+	</div>
+	<div id="container">
+    {% block page_content %} {% endblock %}
+    <br class="clear" />
+	</div>
+    <div id="footer">
+        <div id="footer-text">
+            <div id="footer-content">
+                &copy;2012 Stephen Tsimidis
+            </div>
+        </div>
+    </div>
+</body>
+</html>

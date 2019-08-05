@@ -1,0 +1,25 @@
+Your HashFlag Tweet Digest
+
+Hi,
+
+This is your {{ frequency }} digest update from HashFlag. This digest contains
+the {{ num_tweets }} most recent tweets from twitter that have the following keywords:
+
+{{ keywords }}
+
+{% for tweet in digest_tweets %}
+{{ tweet.screen_name }} {{ tweet.full_name }}
+
+{{ tweet.text|safe }}
+Sent at: {{ tweet.submit_time }}
+
+-------------------------------------------------------------------------------
+{% endfor %}
+
+If you'd rather not receive emails from this alert, you can cancel it immediately at http://hashflag.com/unsubcribe.
+
+To add new alerts or change other HashFlag email preferences, visit your account
+settings to manage email notifications. Please do not reply to this message; it
+was sent from an unmonitored email address.
+
+This message is a service email related to your use of HashFlag.

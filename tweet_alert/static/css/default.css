@@ -1,0 +1,337 @@
+@font-face {
+    font-family: 'Arista';
+    src: url('http://steelsch.webfactional.com/static/fonts/arista-webfont.eot');
+    src: url('http://steelsch.webfactional.com/static/fonts/arista-webfont.eot?#iefix') format('embedded-opentype'),
+    url('http://steelsch.webfactional.com/static/fonts/arista-webfont.woff') format('woff'),
+    url('http://steelsch.webfactional.com/static/fonts/arista-webfont.ttf') format('truetype'),
+    url('http://steelsch.webfactional.com/static/fonts/arista-webfont.svg#[z]AristaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PicoBlack';
+    src: url('http://steelsch.webfactional.com/static/fonts/picoblackal-webfont.eot');
+    src: url('http://steelsch.webfactional.com/static/fonts/picoblackal-webfont.eot?#iefix') format('embedded-opentype'),
+    url('http://steelsch.webfactional.com/static/fonts/picoblackal-webfont.woff') format('woff'),
+    url('http://steelsch.webfactional.com/static/fonts/picoblackal-webfont.ttf') format('truetype'),
+    url('http://steelsch.webfactional.com/static/fonts/picoblackal-webfont.svg#PicoBlackAlRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+
+	background-color: #EEEEEE;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#CCCCCC), to(#EEEEEE)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #CCCCCC, #EEEEEE); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #CCCCCC, #EEEEEE); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #CCCCCC, #EEEEEE); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #CCCCCC, #EEEEEE);
+    background-repeat: no-repeat;
+    border: 0px none;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "PicoBlack","Helvetica Neue",Arial,sans-serif;
+    font-size: 42px;
+    margin: 0px 0px 0px 30px;
+}
+
+h1, h1 a {
+    color: #4099FF;
+}
+
+.white-flag {
+    color: #EEEEEE;
+}
+
+h2 {
+    color: #3089EF;
+    font-family: Arista, "Helvetica Neue", Arial, sans-serif;
+    font-size: 34px;
+    margin: 0.5em 0px;
+    padding: 0px;
+    text-transform: uppercase;
+}
+
+h3 {
+    margin: 1.5em 0px 0.5em;
+    padding: 0px;
+}
+
+h4 {
+    margin: 0.5em 0px;
+    padding: 0px;
+}
+
+#header {
+	background-color: #333333;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#222222)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #333333, #222222); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #333333, #222222); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #333333, #222222); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #333333, #222222);
+	
+	-webkit-box-shadow: 0px -2px 15px 0px #111; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	box-shadow: 0px -2px 15px 0px #111; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+
+}
+
+#login-options {
+    float: right;
+}
+
+#login-options ul {
+    margin: 0px;
+    padding: 15px 0px;
+}
+
+#login-options li {
+    border-right: 1px solid #333333;
+    color: #C0C9CF;
+    cursor: pointer;
+    display: inline;
+    font-size: 14px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 27px 10px 13px;
+}
+
+#login-options li:hover {
+	background-color: #555555;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#444444)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #555555, #444444); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #555555, #444444); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #555555, #444444); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #555555, #444444);
+
+	-webkit-box-shadow: 2px 2px 4px 0px #333 inset; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    box-shadow: 2px 2px 4px #333333 inset;
+    text-decoration: underline;
+}
+
+#login-options a {
+    color: #C0C9CF;
+    margin: 0px;
+    padding: 0px;
+}
+
+#login-options a:hover {
+    text-decoration: underline;
+}
+
+.menu-text {
+    color: #C0C9CF;
+    padding-right: 1em;
+}
+
+#header-container {
+    margin: 0px auto;
+    position: relative;
+    width: 960px;
+}
+
+#container {
+    background: none repeat scroll 0px 0px #FEFEFE;
+	-webkit-border-radius: 10px; /* Saf3-4, iOS 1-3.2, Android =1.6 */
+	border-radius: 10px; /* Opera 10.5, IE9, Saf5, Chrome, FF4+, iOS 4, Android 2.1+ */
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+	
+	-webkit-box-shadow: 0px 0px 4px #444444 inset;
+    box-shadow: 0px 0px 4px #444444 inset;
+    margin: 1em auto 60px;
+    width: 960px;
+}
+
+#sidebar, #trending-sidebar {
+    float: left;
+    margin: 1em 0px;
+    padding: 0px 20px;
+    width: 260px;
+}
+
+#main-body {
+    border-left: 2px solid #EEEEEE;
+    border-radius: 5px 0px 0px 5px;
+    float: right;
+    margin: 1em 0px;
+    padding: 0px 20px;
+    width: 600px;
+}
+
+input[type="text"], input[type="password"] {
+    font-size: 16px;
+    height: 25px;
+    margin: 0px;
+    width: 593px;
+}
+
+.h2-description {
+    font-size: 13px;
+    margin: 0px 20px 1em;
+    padding: 0px 0.5em;
+}
+
+.email-checkbox {
+    margin: 5px 0px 1em;
+}
+
+.alert-keyword-section {
+    border: 1px solid #EEEEEE;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.alert-add-keyword {
+
+	background-color: #4099FF;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#4099FF), to(#3089EF)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #4099FF, #3089EF); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #4099FF, #3089EF); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #4099FF, #3089EF); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #4099FF, #3089EF);
+
+
+	-webkit-border-radius: 5px 0 0 5px; /* Saf3-4, iOS 1-3.2, Android =1.6 */
+	border-radius: 5px 0 0 5px; /* Opera 10.5, IE9, Saf5, Chrome, FF4+, iOS 4, Android 2.1+ */
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+    color: #DDDDDD;
+    cursor: pointer;
+    font-size: 24px;
+    height: 30px;
+    margin: 0px;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.alert-remove-keyword {
+    color: red;
+    font-size: 20px;
+    margin-right: 0.5em;
+}
+
+.alert-keywords ul, ul#trends {
+    border-top: 1px solid #EEEEEE;
+    list-style-type: none;
+    margin: 0px;
+    max-height: 150px;
+    min-height: 100px;
+    overflow: auto;
+    padding: 0px;
+}
+
+ul#trends {
+    border: 1px solid #EEEEEE;
+    margin-bottom: 1em;
+}
+
+.alert-keywords li, #trends li {
+	background-color: #F9F9F9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#FFFFFF)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #F9F9F9, #FFFFFF); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #F9F9F9, #FFFFFF); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #F9F9F9, #FFFFFF); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #F9F9F9, #FFFFFF);
+
+    border-bottom: 1px solid #EEEEEE;
+    display: block;
+    padding: 0.25em 0.5em;
+    vertical-align: middle;
+}
+
+.alert-frequency-settings {
+    background: none repeat scroll 0% 0% #F9F9F9;
+    box-shadow: 0px 0px 4px #AAAAAA;
+    margin: 0.5em 1.5em;
+    padding: 0.5em 1.5em;
+}
+
+.use-digest li, .alert-digest-size li {
+    list-style-type: none;
+}
+
+.alert-frequency li {
+    list-style-type: none;
+    display: inline;
+}
+
+.alert-digest-size input[type="text"] {
+    width: 3em;
+}
+
+ul.errorlist {
+    margin: 0 2em;
+    color: red;
+}
+
+input[type="submit"] {
+	background-color: #4099FF;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#4099FF), to(#3089EF)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #4099FF, #3089EF); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #4099FF, #3089EF); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #4099FF, #3089EF); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #4099FF, #3089EF);
+    border-radius: 5px 5px 5px 5px;
+    border: medium none;
+    color: #DDDDDD;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    right: 1em;
+    text-shadow: 0px 0px 4px #444444;
+}
+
+input[type="submit"]:active {
+	-webkit-box-shadow: 0px 2px 4px #000000 inset;
+    box-shadow: 0px 2px 4px #000000 inset;
+}
+
+.clear {
+    clear: both;
+}
+
+#footer {
+	background-color: #444444;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#333333)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #444444, #333333); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #444444, #333333); /* FF3.6+ */
+	background-image:      -o-linear-gradient(top, #444444, #333333); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #444444, #333333);
+
+    bottom: 0px;
+    left: 0px;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+}
+
+#footer-text {
+    position: relative;
+}
+
+#footer-content {
+    color: #C0C9CF;
+    margin: 0px auto;
+    width: 960px;
+}

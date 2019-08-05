@@ -1,0 +1,49 @@
+{% extends "base-home.html" %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block page_content %}
+    <div id="sidebar">
+        <h2>{% block sidebar_header %}Login Help{% endblock %}</h2>
+        <h3>I forgot my username</h3>
+        <p class="h2-description">
+            Your email is your login account.
+        </p>
+        <h3>I forgot my password</h3>
+        <p class="h2-description">
+            Click here to have a recovery password <a href="#">sent to your email</a>.
+        </p>
+        <h3>I don't have an account</h3>
+        <p class="h2-description">
+            <a href="{% url tweet_alert.views.register %}">Register</a> to create an account.
+        </p>
+    </div>
+    <div id="main-body">
+    <form method="post" action="{% url django.contrib.auth.views.login %}" id="login-form">
+        {% csrf_token %}
+        <h2>{% block login_header %}Sign in{% endblock %}</h2>
+        {% block alert_help_text %}
+            <p class="h2-description">Sign in to view your alerts, make changes, and browse past digests that were sent to your email.</p>
+            {% if form.errors %}
+                <p class="h2-description">Your username and password didn't match. Please try again.</p>
+            {% endif %}
+        {% endblock %}
+        {% block email_input %}
+            <h3>Email Address:</h3>
+            {{ form.username }}
+        {% endblock %}
+        {% block password %}
+            <h3>Password:</h3>
+            {{ form.password }}
+            <div class="email-checkbox">
+                <input type="checkbox" name="remember-me" id="login-remember" /><label for="login-remember">Keep me logged into this account.</label>
+            </div>
+            <p class="h2-description">The password you created should have been at least six characters long and containing at least one alpha and one numeric character.</p>
+        {% endblock %}
+
+        <input type="submit" value="Sign In" />
+        <input type="hidden" name="next" value="/" />
+    </form>
+    </div>
+{% endblock %}

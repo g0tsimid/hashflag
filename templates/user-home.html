@@ -1,0 +1,5 @@
+{% extends "base-home.html" %}
+
+{% block email_input %}
+    <input type="hidden" name="email" id="new-alert-email" value="{{ user.email }}" class="text-input" />
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base-home.html" %}
+
+{% block page_content %}
+    <div id="sidebar">
+        <h2>Your Alerts</h2>
+    </div>
+    <div id="main-body">
+        <h2>Your settings</h2>
+        <h3>Spam Protection</h3>
+        <p class="h2-description">
+            Prevent emails from being sent to this account. Select this if your suspect that your email is being automatically registered for alerts without your knowledge.
+        </p>
+        <form action="/" method="get">
+            <input type="checkbox" name="spam-protect" id="spam-protected" /><label for="spam-protected">Protect my email from being sent email digests.</label>
+            <br />
+            <input type="submit" value="Save Changes" />
+        </form>
+    </div>
+{% endblock %}
